@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from zeep import Client
 
 app = Flask(__name__)
@@ -35,6 +35,8 @@ def countries_by_currency():
     if currency_code:
         countries = client.service.CountriesUsingCurrency(sISOCurrencyCode=currency_code)
         return render_template('countries_by_currency.html', countries=countries, enumerate=enumerate)
+    else:
+        return jsonify({"status": "failed", "message": "No data found for this!!!"}, 400)
     
 
 @app.route('/currency-by-country', methods=['POST'])
