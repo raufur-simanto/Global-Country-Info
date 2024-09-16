@@ -34,9 +34,11 @@ def countries_by_currency():
     print(currency_code)
     if currency_code:
         countries = client.service.CountriesUsingCurrency(sISOCurrencyCode=currency_code)
+        print(countries)
         return render_template('countries_by_currency.html', countries=countries, enumerate=enumerate)
     else:
-        return jsonify({"status": "failed", "message": "No data found for this!!!"}, 400)
+        return render_template('countries_by_currency.html', countries=[{'sISOCode': None,'sName': "No data found"}], enumerate=enumerate)
+        # return jsonify({"status": "failed", "message": "No data found for this!!!"}, 400)
     
 
 @app.route('/currency-by-country', methods=['POST'])
