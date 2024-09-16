@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Country Information</h1>
+        <p><strong>Country Name:</strong> {{ country_info.sName }}</p>
+        <p><strong>Capital City:</strong> {{ country_info.sCapitalCity }}</p>
+        <p><strong>Phone Code:</strong> {{ country_info.sPhoneCode }}</p>
+        <p><strong>Continent Code:</strong> {{ country_info.sContinentCode }}</p>
+        <p><strong>Currency ISO Code:</strong> {{ country_info.sCurrencyISOCode }}</p>
+        <p><strong>Country Flag:</strong> <img src="{{ country_info.sCountryFlag }}" alt="Flag"></p>
+        <p><strong>Languages:</strong> 
+            {% for lang in country_info.Languages.tLanguage %}
+                {{ lang.sName }} ({{ lang.sISOCode }})
+            {% endfor %}
+        </p>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

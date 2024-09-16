@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag and Phone Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Flag and Phone Code</h1>
+        <p><strong>Flag:</strong> <img src="{{ flag_url }}" alt="Flag"></p>
+        <p><strong>Phone Code:</strong> {{ phone_code }}</p>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Info App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Global Information Service</h1>
+        <form action="/country-info" method="post">
+            <label for="country_name">Enter Country Name:</label>
+            <input type="text" id="country_name" name="country_name" required>
+            <input type="submit" value="Get Information">
+        </form>
+
+        <h2>Other Features</h2>
+        <form action="/countries-by-currency" method="post">
+            <label for="currency">Enter Currency:</label>
+            <input type="text" id="currency" name="currency" required>
+            <input type="submit" value="Get Countries Using Currency">
+        </form>
+
+        <form action="/currency-by-country" method="post">
+            <label for="country_name">Enter Country Name:</label>
+            <input type="text" id="country_name" name="country_name" required>
+            <input type="submit" value="Get Currency Used">
+        </form>
+
+        <form action="/flag-phone-code" method="post">
+            <label for="country_name">Enter Country Name:</label>
+            <input type="text" id="country_name" name="country_name" required>
+            <input type="submit" value="Get Flag and Phone Code">
+        </form>
+    </div>
+</body>
+</html>
