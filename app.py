@@ -35,9 +35,9 @@ def countries_by_currency():
     if currency_code:
         countries = client.service.CountriesUsingCurrency(sISOCurrencyCode=currency_code)
         print(countries)
-        return render_template('countries_by_currency.html', countries=countries, enumerate=enumerate)
+        return render_template('countries_by_currency.html', currency=currency, countries=countries, enumerate=enumerate)
     else:
-        return render_template('countries_by_currency.html', countries=[{'sISOCode': None,'sName': "No data found"}], enumerate=enumerate)
+        return render_template('countries_by_currency.html', currency=currency, countries=[{'sISOCode': None,'sName': "No data found"}], enumerate=enumerate)
         # return jsonify({"status": "failed", "message": "No data found for this!!!"}, 400)
     
 
@@ -46,7 +46,7 @@ def currency_by_country():
     country_name = request.form.get('country_name')
     iso_code = client.service.CountryISOCode(sCountryName=country_name)
     currency = client.service.CountryCurrency(sCountryISOCode=iso_code)
-    return render_template('currency_by_country.html', currency=currency)
+    return render_template('currency_by_country.html', currency=currency, country=country_name)
 
 
 @app.route('/flag-phone-code', methods=['POST'])

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Global Country Information and Currency Explorer** is a web-based application that provides detailed information about countries and their currencies using SOAP web services. Users can input a country name to retrieve full country details or find out which countries use a specific currency. The application uses a publicly available WSDL service http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL for gathering country and currency information.
+The **Global Country Information and Currency Explorer** is a web-based application that provides detailed information about countries and their currencies using SOAP web services. Users can input a country name to retrieve full country details or find out which countries use a specific currency. The application uses a publicly available WSDL service http://www.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL= for gathering country and currency information.
 
 ## Features
 
@@ -40,7 +40,7 @@ The application is built on top of SOAP web services that provide the following 
 ## Project Structure
 
 ```
-global_country_info_explorer
+global_country_info
 │
 ├── static/
 │   └── styles.css           # Custom CSS styles for the application
@@ -85,9 +85,8 @@ global_country_info_explorer
 4. **Run the application**:
 
    ```bash
-   flask run
+   flask run or
    python app.py
-   flask shell
    ```
 
 5. **Access the application**:
